@@ -25,7 +25,7 @@ interface SocialPlatform {
   color: string;
   authUrl: string;
 }
-
+const client_id = import.meta.env.VITE_INSTAGRAM_CLIENT_ID
 const socialPlatforms: SocialPlatform[] = [
   {
     id: 'twitter',
@@ -39,7 +39,15 @@ const socialPlatforms: SocialPlatform[] = [
     name: 'Instagram',
     icon: Instagram,
     color: '#E4405F',
-    authUrl: 'https://instagram.com/oauth', // Replace with actual OAuth URL
+    authUrl:  "https://www.instagram.com/oauth/authorize"
+    + "?enable_fb_login=0"
+    + "&force_authentication=1"
+    + `&client_id=${client_id}`
+    + "&redirect_uri=https://localhost:3443/instagram/callback"
+    + "&response_type=code"
+    + "&scope=instagram_business_basic,instagram_business_manage_messages,"
+          + "instagram_business_manage_comments,instagram_business_content_publish,"
+          + "instagram_business_manage_insights",
   },
   {
     id: 'facebook',

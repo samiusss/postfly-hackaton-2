@@ -89,7 +89,7 @@ function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link 
-                    to="/user-profile" 
+                    to="/user-profile"
                     className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors rounded-lg mx-2"
                   >
                     <Settings size={18} />
